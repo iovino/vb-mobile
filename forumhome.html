@@ -15,6 +15,26 @@
     <link href="./assets/css/main.css" rel="stylesheet">
     <link href="./assets/css/vbulletin.css" rel="stylesheet">
 
+    <!-- Plugin: jquery.mmenu -->
+    <!--<link type="text/css" rel="stylesheet" href="./assets/vendor/jquery.mmenu/demo/demo.css" />-->
+    <link type="text/css" rel="stylesheet" href="./assets/vendor/jquery.mmenu/src/css/jquery.mmenu.all.css" />
+    <style type="text/css">
+        .mm-menu li.img a
+        {
+            font-size: 16px;
+        }
+        .mm-menu li.img a img
+        {
+            float: left;
+            margin: -5px 10px -5px 0;
+        }
+        .mm-menu li.img a small
+        {
+            font-size: 12px;
+        }
+    </style>
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -161,6 +181,54 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Plugin: jquery.mmenu -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/jquery.hammer.min.js"></script>
+<script type="text/javascript" src="./assets/vendor/jquery.mmenu/src/js/jquery.mmenu.min.all.js"></script>
+<script type="text/javascript">
+
+    //	The menu on the left
+    $(function() {
+        $('nav#menu-left').mmenu();
+    });
+
+
+    //	The menu on the right
+    $(function() {
+
+        var $menu = $('nav#menu-right');
+
+        $menu.mmenu({
+            position	: 'right',
+            classes		: 'mm-light',
+            dragOpen	: true,
+            counters	: true,
+            searchfield	: true,
+            labels		: {
+                fixed		: !$.mmenu.support.touch
+            },
+            header		: {
+                add			: true,
+                update		: true,
+                title		: 'Contacts'
+            }
+        });
+
+        //	Click a menu-item
+        var $confirm = $('#confirmation');
+        $menu.find( 'li a' ).not( '.mm-subopen' ).not( '.mm-subclose' ).bind(
+                'click.example',
+                function( e )
+                {
+                    e.preventDefault();
+                    $confirm.show().text( 'You clicked "' + $.trim( $(this).text() ) + '"' );
+                    $('#menu-right').trigger( 'close' );
+                }
+        );
+    });
+</script>
+
+
 <script src="./assets/js/main.js"></script>
 
 
