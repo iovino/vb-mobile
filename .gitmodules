@@ -1,0 +1,3 @@
+[submodule "assets/vendor/jquery.mmenu"]
+	path = assets/vendor/jquery.mmenu
+	url = https://github.com/BeSite/jQuery.mmenu.git
