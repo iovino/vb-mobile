@@ -11,13 +11,12 @@
     <!-- Bootstrap core CSS -->
     <link href="./assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="./assets/css/main.css" rel="stylesheet">
-    <link href="./assets/css/vbulletin.css" rel="stylesheet">
-
     <!-- Plugin: jquery.mmenu -->
     <link type="text/css" rel="stylesheet" href="./assets/vendor/jquery.mmenu/src/css/jquery.mmenu.all.css" />
 
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <link href="./assets/css/vbulletin.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -227,17 +226,18 @@
 
     <!-- navigation menus -->
     <nav id="menu-left">
-        <ul>
-            <li><a href="index.html">Introduction</a></li>
-            <li><a href="horizontal-submenus.html">Horizontal submenus example</a></li>
-            <li><a href="vertical-submenus.html">Vertical submenus example</a></li>
-            <li><a href="photos.html">Photos in sliding panels</a></li>
-            <li><a href="positions.html">Positioning the menu</a></li>
-            <li><a href="colors.html">Coloring the menu</a></li>
-            <li class="Selected"><a href="advanced.html">Advanced example</a></li>
-            <li><a href="onepage.html">One page scrolling example</a></li>
-            <li><a href="jqmobile/index.html">jQuery Mobile example</a></li>
-        </ul>
+
+            <div class="avatar-box">
+                <div class="avatar-img">
+                    <img src="http://avatar.coolclip.ru/albums/Avatars/Avatars%2080x80/Avatars_80x80_028.jpg" alt=""/>
+                </div>
+                <ul>
+                    <li>Ken Iovino</li>
+                    <li>Post: 2,875</li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+
     </nav>
     <nav id="menu-right">
     <ul>
@@ -509,18 +509,32 @@
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- jQuery Plugin: Twitter Bootstrap -->
 <script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Plugin: jquery.mmenu -->
+<!-- jQuery Plugin: jquery.mmenu -->
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/jquery.hammer.min.js"></script>
 <script type="text/javascript" src="./assets/vendor/jquery.mmenu/src/js/jquery.mmenu.min.all.js"></script>
 <script type="text/javascript">
 
     //	The menu on the left
     $(function() {
-        $('nav#menu-left').mmenu();
+        var $menu = $('nav#menu-left');
+
+        $menu.mmenu({
+            position	: 'left',
+            classes		: 'mm-light',
+            dragOpen	: true,
+            counters	: true,
+            searchfield	: false,
+            labels		: {
+                fixed		: !$.mmenu.support.touch
+            }
+        });
+
     });
 
     //	The menu on the right
