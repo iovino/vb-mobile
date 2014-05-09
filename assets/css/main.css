@@ -33,6 +33,15 @@ h1, h2, h3 {
     position: relative;
     top: 15px;
     left: 10px; }
+    #header div.head-left a:link, #header div.head-left a:visited, #header div.head-left a:hover {
+      background: center center no-repeat transparent;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC);
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 10px; }
   #header div.head-center {
     text-align: center; }
   #header div.head-right {
@@ -40,6 +49,15 @@ h1, h2, h3 {
     position: relative;
     top: 15px;
     right: 10px; }
+    #header div.head-right a:link, #header div.head-right a:visited, #header div.head-right a:hover {
+      background: center center no-repeat transparent;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNq01jFLAzEYxvH2UBCxiIiDUhzcdXCyIk5ufgUXLR37JdxcXBxcuwmOOtml0EKpo04iWIpIQREVEVFLjf9AhoC9e3O5uxd+lMLdPU1yedO8UiqXdQWO122ghi4+8IwGqiiId+uRCHbxqsLrFHNRz5ACSnhTch1EPScQpnIH0w7TWcGiz5rouS45rtkMVnxCJrAQ4yUq+oT8YhAjZOAT8oWHGCE9nxC9H64cA15w4xOiW0HbfErVNhvUa8c3cecQcoZv3xA9z+fCNbe4SNq7jvEUMaUnuE/au7SjkHbSR1G637ULh73Kn+gn7cIBttELGckQh9Jo8iMOrSksYx2b2MKk8FuvUUcHl/9GbiWuooYu3pVf/eARLZQxbp8na2YR0659e+HLmM/geN+z98lSRv8hZu2QQkYh+kzKjZkvHdPahymH6DNp5Cucev0JMAAkKj0NEoYBJwAAAABJRU5ErkJggg==);
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      right: 10px; }
     #header div.head-right div.right-trigger {
       width: 36px;
       height: 36px;
