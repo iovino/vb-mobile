@@ -1,3 +1,5 @@
+
+// reset some default jquery.mmenu classes
 .mm-list > li:not(.mm-subtitle):not(.mm-label):not(.mm-noresults):after {
   border-bottom-width: 0px;
   border-bottom-style: none;
@@ -7,31 +9,177 @@
   padding: 0;
 }
 
-#menu-left {
+// begin the my account left menus
+.my-account {
   background: #333333;
   color: #ffffff;
 
-  div {
-    margin: 0;
+  .my-account-content {
     padding: 0;
-  }
-
-  ul,li {
     margin: 0;
-    padding: 0;
-  }
 
-  div.avatar-box {
+    // Avatar Box
+    div.avatar-box {
+      background: #333333 url("../imgs/gradients/avatar-box.png") repeat-x;
+      height: 100px;
+      padding: 10px;
+      border-bottom: 1px solid #414141;
 
-    margin-top: 5px;
-    margin-left: 5px;
-
-    div.avatar-img {
-
-      img {
-        float: left;
-        margin-right: 10px;
+      ul, li {
+        margin: 0;
+        padding: 0;
       }
+
+      div.avatar-img {
+        img {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+
+      li.username {
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 20px;
+      }
+
+      li.usertitle {
+        font-size: 10px;
+      }
+
+    }
+
+    // Account Links
+    div.my-account-links {
+      ul, li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      li {
+        border-bottom: 1px solid #414141;
+        a:link, a:visited, a:hover {
+          padding: 10px 10px 10px 10px;
+        }
+      }
+
+      // Menu Header
+      .menu-header {
+        background: #202020;
+        padding: 5px 10px;
+        font-weight: bold;
+        color: #595959;
+      }
+
+      span.notifications {
+
+        //background: #bb4c4c;
+        //padding: 0px 4px;
+        position: absolute;
+        right: 10px;
+        text-align: center;
+        min-width: 25px;
+        font-size: 14px;
+        font-weight: bold;
+        -webkit-border-radius: 2px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .7);
+        background-color: #dc0d17;
+        background-image: -webkit-gradient(linear, center top, center bottom, from(#fa3c45), to(#dc0d17));
+        background-image: -webkit-linear-gradient(#fa3c45, #dc0d17);
+        color: #fff;
+        min-height: 13px;
+        padding: 1px 3px;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+        width: 10px;
+
+      }
+
+      // My Account Icons
+      li.icon-messages  {
+        a:before {
+          @include my-account-icon();
+          content: "\f0e0";
+          padding-right: 6px;
+        }
+      }
+      li.icon-threads  {
+        a:before {
+          @include my-account-icon();
+          content: "\f09e";
+          padding-left: 3px;
+          padding-right: 10px;
+        }
+      }
+      li.icon-newposts  {
+        a:before {
+          @include my-account-icon();
+          content: "\f0a1";
+        }
+      }
+
+      // Your Profile Icons
+      li.icon-pencil {
+        a:before {
+          @include my-account-icon();
+          content: "\f040";
+          padding-left: 3px;
+        }
+      }
+      li.icon-lock {
+        a:before {
+          @include my-account-icon();
+          content: "\f023";
+          padding-left: 3px;
+          padding-right: 13px;
+        }
+      }
+      li.icon-image {
+        a:before {
+          @include my-account-icon();
+          content: "\f03e";
+          padding-right: 9px;
+        }
+      }
+
+      // Settings & Options Icons
+      li.icon-signature {
+        a:before {
+          @include my-account-icon();
+          content: "\f10d";
+          padding-right: 11px;
+        }
+      }
+      li.icon-wrench {
+        a:before {
+          @include my-account-icon();
+          content: "\f0ad";
+          padding-right: 11px;
+        }
+      }
+      li.icon-gear {
+        a:before {
+          @include my-account-icon();
+          content: "\f013";
+          padding-right: 13px;
+        }
+      }
+
+      li.icon-ignore {
+        a:before {
+          @include my-account-icon();
+          content: "\f057";
+          padding-right: 13px;
+        }
+      }
+      li.icon-logout {
+        a:before {
+          @include my-account-icon();
+          content: "\f08b";
+          padding-right: 11px;
+        }
+      }
+
     }
   }
+
 }

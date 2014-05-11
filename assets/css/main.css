@@ -1,6 +1,254 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-@import url(./forumhome.css);
-@import url(./menus.css);
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/font-awesome/fontawesome-webfont.eot?v=4.0.3");
+  src: url("../fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/font-awesome/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../fonts/font-awesome/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../fonts/font-awesome/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+#forums-list {
+  border-bottom: 1px solid #c6c6c7;
+  margin-bottom: 15px; }
+  #forums-list .box-container .box-body {
+    background: #e3e3e6;
+    color: #333333;
+    padding: 0px;
+    border-bottom: none; }
+  #forums-list div.forum-bit {
+    padding-left: 5px;
+    border-bottom: 1px solid #ffffff; }
+    #forums-list div.forum-bit div.forum-bit-wrap {
+      background: #e3e3e6;
+      padding: 10px;
+      cursor: pointer; }
+      #forums-list div.forum-bit div.forum-bit-wrap a:link, #forums-list div.forum-bit div.forum-bit-wrap a:visited, #forums-list div.forum-bit div.forum-bit-wrap :hover {
+        text-decoration: none; }
+      #forums-list div.forum-bit div.forum-bit-wrap div.forum-title {
+        color: #084b82;
+        font-weight: bold;
+        font-size: 16px; }
+      #forums-list div.forum-bit div.forum-bit-wrap div.forum-summary {
+        color: #333333;
+        font-size: 14px; }
+
+.status-new {
+  background: #499551; }
+
+.status-old {
+  background: #9fc1a5; }
+
+#whos-online p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  text-align: center; }
+#whos-online p.active-text {
+  font-weight: bold;
+  margin-bottom: 10px; }
+#whos-online div.box-body {
+  padding: 15px; }
+
+#forums-status {
+  font-size: 12px;
+  margin: 0 auto;
+  width: 320px; }
+  #forums-status div.forum-status-new, #forums-status div.forum-status-old {
+    width: auto;
+    float: left;
+    margin: 0 5px 15px 5px; }
+    #forums-status div.forum-status-new div.status-new-border, #forums-status div.forum-status-old div.status-new-border {
+      border-bottom: 4px solid #499551;
+      width: 120px;
+      margin: 0 auto;
+      margin-top: 5px; }
+    #forums-status div.forum-status-new div.status-old-border, #forums-status div.forum-status-old div.status-old-border {
+      border-bottom: 4px solid #a6c7ac;
+      width: 120px;
+      margin: 0 auto;
+      margin-top: 5px; }
+
+.mm-list > li:not(.mm-subtitle):not(.mm-label):not(.mm-noresults):after {
+  border-bottom-width: 0px;
+  border-bottom-style: none; }
+
+.mm-list > li > a, .mm-list > li > span {
+  padding: 0; }
+
+.my-account {
+  background: #333333;
+  color: #ffffff; }
+  .my-account .my-account-content {
+    padding: 0;
+    margin: 0; }
+    .my-account .my-account-content div.avatar-box {
+      background: #333333 url("../imgs/gradients/avatar-box.png") repeat-x;
+      height: 100px;
+      padding: 10px;
+      border-bottom: 1px solid #414141; }
+      .my-account .my-account-content div.avatar-box ul, .my-account .my-account-content div.avatar-box li {
+        margin: 0;
+        padding: 0; }
+      .my-account .my-account-content div.avatar-box div.avatar-img img {
+        float: left;
+        margin-right: 10px; }
+      .my-account .my-account-content div.avatar-box li.username {
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 20px; }
+      .my-account .my-account-content div.avatar-box li.usertitle {
+        font-size: 10px; }
+    .my-account .my-account-content div.my-account-links ul, .my-account .my-account-content div.my-account-links li {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+    .my-account .my-account-content div.my-account-links li {
+      border-bottom: 1px solid #414141; }
+      .my-account .my-account-content div.my-account-links li a:link, .my-account .my-account-content div.my-account-links li a:visited, .my-account .my-account-content div.my-account-links li a:hover {
+        padding: 10px 10px 10px 10px; }
+    .my-account .my-account-content div.my-account-links .menu-header {
+      background: #202020;
+      padding: 5px 10px;
+      font-weight: bold;
+      color: #595959; }
+    .my-account .my-account-content div.my-account-links span.notifications {
+      position: absolute;
+      right: 10px;
+      text-align: center;
+      min-width: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      -webkit-border-radius: 2px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+      background-color: #dc0d17;
+      background-image: -webkit-gradient(linear, center top, center bottom, from(#fa3c45), to(#dc0d17));
+      background-image: -webkit-linear-gradient(#fa3c45, #dc0d17);
+      color: #fff;
+      min-height: 13px;
+      padding: 1px 3px;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+      width: 10px; }
+    .my-account .my-account-content div.my-account-links li.icon-messages a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f0e0";
+      padding-right: 6px; }
+    .my-account .my-account-content div.my-account-links li.icon-threads a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f09e";
+      padding-left: 3px;
+      padding-right: 10px; }
+    .my-account .my-account-content div.my-account-links li.icon-newposts a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f0a1"; }
+    .my-account .my-account-content div.my-account-links li.icon-pencil a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f040";
+      padding-left: 3px; }
+    .my-account .my-account-content div.my-account-links li.icon-lock a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f023";
+      padding-left: 3px;
+      padding-right: 13px; }
+    .my-account .my-account-content div.my-account-links li.icon-image a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f03e";
+      padding-right: 9px; }
+    .my-account .my-account-content div.my-account-links li.icon-signature a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f10d";
+      padding-right: 11px; }
+    .my-account .my-account-content div.my-account-links li.icon-wrench a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f0ad";
+      padding-right: 11px; }
+    .my-account .my-account-content div.my-account-links li.icon-gear a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f013";
+      padding-right: 13px; }
+    .my-account .my-account-content div.my-account-links li.icon-ignore a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f057";
+      padding-right: 13px; }
+    .my-account .my-account-content div.my-account-links li.icon-logout a:before {
+      padding-right: 10px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-size: 18px;
+      vertical-align: -1px;
+      content: "\f08b";
+      padding-right: 11px; }
+
 html {
   height: 100%;
   min-height: 100%;
@@ -10,9 +258,9 @@ body {
   margin: 0;
   height: 100%;
   min-height: 100%;
-  background: #ffffff;
-  color: #353d46;
-  font-family: 'Open Sans', sans-serif; }
+  background: white;
+  color: #333333;
+  font-family: "Open Sans", sans-serif; }
 
 .container {
   padding-left: 0px;
@@ -21,7 +269,7 @@ body {
 
 .box-container .box-head {
   background: #354e6f;
-  color: #ffffff;
+  color: white;
   font-size: 14px;
   font-weight: bold;
   padding: 5px; }
@@ -32,7 +280,7 @@ body {
   border-bottom: 1px solid #c6c6c7; }
 .box-container .box-foot {
   background: #354e6f;
-  color: #ffffff;
+  color: white;
   font-size: 14px;
   font-weight: bold;
   padding: 5px; }
@@ -45,37 +293,58 @@ body {
   #header div.head-left {
     float: left;
     position: relative;
-    top: 15px;
-    left: 10px; }
+    top: 20px;
+    left: 20px; }
     #header div.head-left a:link, #header div.head-left a:visited, #header div.head-left a:hover {
-      background: center center no-repeat transparent;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC);
-      display: block;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      top: 0;
-      left: 10px; }
+      text-decoration: none; }
+    #header div.head-left a:link:before, #header div.head-left a:visited:before, #header div.head-left a:hover:before {
+      font-size: 28px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      content: "\f007";
+      color: white; }
+    #header div.head-left .notifications {
+      font-size: 10px;
+      font-weight: bold;
+      -webkit-border-radius: 2px;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+      background-color: #dc0d17;
+      background-image: -webkit-gradient(linear, center top, center bottom, from(#fa3c45), to(#dc0d17));
+      background-image: -webkit-linear-gradient(#fa3c45, #dc0d17);
+      color: #fff;
+      min-height: 13px;
+      padding: 1px 5px;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+      position: relative;
+      top: -15px;
+      right: 10px; }
   #header div.head-center {
     text-align: center; }
+    #header div.head-center img {
+      width: 123px; }
   #header div.head-right {
     float: right;
     position: relative;
-    top: 15px;
-    right: 10px; }
+    top: 20px;
+    right: 20px; }
     #header div.head-right a:link, #header div.head-right a:visited, #header div.head-right a:hover {
-      background: center center no-repeat transparent;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVNJREFUeNq01jFLAzEYxvH2UBCxiIiDUhzcdXCyIk5ufgUXLR37JdxcXBxcuwmOOtml0EKpo04iWIpIQREVEVFLjf9AhoC9e3O5uxd+lMLdPU1yedO8UiqXdQWO122ghi4+8IwGqiiId+uRCHbxqsLrFHNRz5ACSnhTch1EPScQpnIH0w7TWcGiz5rouS45rtkMVnxCJrAQ4yUq+oT8YhAjZOAT8oWHGCE9nxC9H64cA15w4xOiW0HbfErVNhvUa8c3cecQcoZv3xA9z+fCNbe4SNq7jvEUMaUnuE/au7SjkHbSR1G637ULh73Kn+gn7cIBttELGckQh9Jo8iMOrSksYx2b2MKk8FuvUUcHl/9GbiWuooYu3pVf/eARLZQxbp8na2YR0659e+HLmM/geN+z98lSRv8hZu2QQkYh+kzKjZkvHdPahymH6DNp5Cucev0JMAAkKj0NEoYBJwAAAABJRU5ErkJggg==);
-      display: block;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      top: 0;
-      right: 10px; }
+      text-decoration: none; }
+    #header div.head-right a:link:before, #header div.head-right a:visited:before, #header div.head-right a:hover:before {
+      font-size: 28px;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      content: "\f0c9";
+      color: white; }
 
 #footer {
   background: #354e6f;
-  color: #ffffff;
+  color: white;
   padding: 15px;
   width: 100%;
   text-align: center;
@@ -84,4 +353,42 @@ body {
   #footer a:link, #footer a:visited, #footer a:hover {
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff; }
+    color: white; }
+
+#search :before {
+  font-size: 20px;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f002";
+  color: #9f9f9f;
+  position: absolute;
+  padding-top: 5px;
+  padding-left: 10px; }
+#search input.search-box {
+  background: white;
+  color: #9f9f9f;
+  border: none;
+  width: 100%;
+  height: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+#search input.search-box::-webkit-input-placeholder {
+  color: #9f9f9f;
+  font-size: 15px;
+  font-weight: normal; }
+#search input.search-box:-moz-placeholder {
+  /* Firefox 18- */
+  color: #9f9f9f; }
+#search input.search-box::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9f9f9f; }
+#search input.search-box:-ms-input-placeholder {
+  color: #9f9f9f; }

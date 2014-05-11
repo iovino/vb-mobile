@@ -1,28 +1,3 @@
-#search input.search-box {
-  background: white url("../imgs/icons/search.png") no-repeat 10px 5px;
-  border: none;
-  width: 100%;
-  height: 30px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-#search input.search-box::-webkit-input-placeholder {
-  color: #9f9f9f;
-  font-size: 15px;
-  font-weight: normal; }
-#search input.search-box:-moz-placeholder {
-  /* Firefox 18- */
-  color: #9f9f9f; }
-#search input.search-box::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #9f9f9f; }
-#search input.search-box:-ms-input-placeholder {
-  color: #9f9f9f; }
-
 #forums-list {
   border-bottom: 1px solid #c6c6c7;
   margin-bottom: 15px; }
@@ -64,3 +39,22 @@
   margin-bottom: 10px; }
 #whos-online div.box-body {
   padding: 15px; }
+
+#forums-status {
+  font-size: 12px;
+  margin: 0 auto;
+  width: 320px; }
+  #forums-status div.forum-status-new, #forums-status div.forum-status-old {
+    width: auto;
+    float: left;
+    margin: 0 5px 15px 5px; }
+    #forums-status div.forum-status-new div.status-new-border, #forums-status div.forum-status-old div.status-new-border {
+      border-bottom: 4px solid #499551;
+      width: 120px;
+      margin: 0 auto;
+      margin-top: 5px; }
+    #forums-status div.forum-status-new div.status-old-border, #forums-status div.forum-status-old div.status-old-border {
+      border-bottom: 4px solid #a6c7ac;
+      width: 120px;
+      margin: 0 auto;
+      margin-top: 5px; }
