@@ -1,7 +1,9 @@
 @import "vbulletin"; // the main style to use
 @import "mixins";
 @import "forumhome";
+@import "forumdisplay";
 @import "menus";
+@import "private";
 
 // Globals
 html {
@@ -49,6 +51,7 @@ body {
     padding: 5px;
   }
 }
+
 
 // Header Content
 #header {

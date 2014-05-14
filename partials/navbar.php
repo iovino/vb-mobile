@@ -14,7 +14,7 @@
         <div class="my-account-links">
             <ul>
                 <li class="icon-messages">
-                    <a href="">
+                    <a href="../private.php">
                         <span class="notifications">23</span>Private Messages
                     </a>
                 </li>

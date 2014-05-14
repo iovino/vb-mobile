@@ -66,6 +66,48 @@
       margin: 0 auto;
       margin-top: 5px; }
 
+#threads-list {
+  border-bottom: 1px solid #c6c6c7;
+  margin-bottom: 15px; }
+  #threads-list .box-body {
+    color: #333333;
+    padding: 0px;
+    border-bottom: none; }
+  #threads-list div.thread-bit {
+    padding-left: 5px;
+    border-bottom: 1px solid #ffffff; }
+    #threads-list div.thread-bit div.thread-bit-wrap {
+      background: #e3e3e6;
+      padding: 10px;
+      cursor: pointer; }
+      #threads-list div.thread-bit div.thread-bit-wrap a:link, #threads-list div.thread-bit div.thread-bit-wrap a:visited, #threads-list div.thread-bit div.thread-bit-wrap :hover {
+        text-decoration: none; }
+      #threads-list div.thread-bit div.thread-bit-wrap input[type='checkbox'] {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 5px;
+        border: 2px solid #c6c6c7;
+        float: right;
+        position: relative;
+        right: 0px;
+        top: 0px;
+        margin: 0px 0px 0px 10px; }
+      #threads-list div.thread-bit div.thread-bit-wrap input[type='checkbox']:checked {
+        background: green; }
+      #threads-list div.thread-bit div.thread-bit-wrap div.thread-title {
+        color: #084b82;
+        font-size: 14px; }
+      #threads-list div.thread-bit div.thread-bit-wrap div.thread-summary {
+        color: #333333;
+        font-size: 12px; }
+        #threads-list div.thread-bit div.thread-bit-wrap div.thread-summary div.thread-author, #threads-list div.thread-bit div.thread-bit-wrap div.thread-summary div.thread-stats {
+          display: inline-block; }
+
+@media only screen and (min-width: 350px) {
+  #threads-list div.thread-bit div.thread-bit-wrap div.thread-summary div.thread-stats {
+    float: right; } }
 .mm-list > li:not(.mm-subtitle):not(.mm-label):not(.mm-noresults):after {
   border-bottom-width: 0px;
   border-bottom-style: none; }
@@ -248,6 +290,19 @@
       vertical-align: -1px;
       content: "\f08b";
       padding-right: 11px; }
+
+#pm-list .box-body {
+  margin: 0;
+  padding: 0; }
+#pm-list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  #pm-list ul li .pm-checkbox {
+    float: right;
+    position: relative;
+    top: 10px;
+    right: 10px; }
 
 html {
   height: 100%;

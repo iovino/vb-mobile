@@ -4,7 +4,7 @@
     <header id="header">
         <div class="head-left">
             <a href="#menu-left">
-                <span class="notifications">9</span>
+                <span class="notifications">23</span>
             </a>
         </div>
         <div class="head-right">

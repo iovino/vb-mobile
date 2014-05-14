@@ -11,8 +11,8 @@
     <title>vBulletin Mobile</title>
 </head>
 <body>
-<?php include 'partials/header.php'; ?>
-<?php include 'partials/navbar.php'; ?>
+    <?php include 'partials/header.php'; ?>
+    <?php include 'partials/navbar.php'; ?>
 
     <!-- search -->
     <div id="search">
@@ -24,151 +24,29 @@
 
     <!-- forumbits -->
     <div id="forums-list">
-
-        <!-- parent forum -->
-        <div class="box-container">
-            <div class="box-head">
-                Contractor Talk Forums
+        <?php for($p = 0; $p < 3; $p++) : ?>
+            <!-- parent forum -->
+            <div class="box-container">
+                <div class="box-head">Contractor Talk Forums</div>
+                <div class="box-body">
+                    <?php for($i = 0; $i < 3; $i++) : ?>
+                        <!-- child-forum -->
+                        <div class="forum-bit status-new">
+                            <div class="forum-bit-wrap">
+                                <a href="forumdisplay.php">
+                                    <div class="info">
+                                        <div class="forum-title">General Discussion</div>
+                                        <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /child-forum -->
+                    <?php endfor ?>
+                </div>
             </div>
-            <div class="box-body">
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- child-forum -->
-            </div>
-        </div>
-        <!-- parent forum -->
-
-        <!-- parent forum -->
-        <div class="box-container">
-            <div class="box-head">
-                Contractor Talk Forums
-            </div>
-            <div class="box-body">
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- child-forum -->
-            </div>
-        </div>
-        <!-- parent forum -->
-
-        <!-- parent forum -->
-        <div class="box-container">
-            <div class="box-head">
-                Contractor Talk Forums
-            </div>
-            <div class="box-body">
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /child-forum -->
-
-                <!-- child-forum -->
-                <div class="forum-bit status-new">
-                    <div class="forum-bit-wrap">
-                        <a href="">
-                            <div class="info">
-                                <div class="forum-title">General Discussion</div>
-                                <div class="forum-summary">Discuss general topics that apply to all trades here. Please do not use this forum for Off Topic discussions.</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- child-forum -->
-            </div>
-        </div>
-        <!-- parent forum -->
-
+            <!-- parent forum -->
+        <?php endfor ?>
     </div>
     <!-- /forumbits -->
 
@@ -199,7 +77,6 @@
     </div>
     <!-- /who's online -->
 
-<?php include 'partials/footer.php'; ?>
-
+    <?php include 'partials/footer.php'; ?>
 </body>
 </html>

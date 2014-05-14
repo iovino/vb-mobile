@@ -1,0 +1,137 @@
+#threads-list {
+  border-bottom:1px solid #c6c6c7;
+  margin-bottom: 15px;
+
+  // remove default box padding
+  .box-body {
+    color: #333333;
+    padding: 0px;
+    border-bottom:none;
+  }
+
+  div.thread-bit {
+    padding-left: 5px;
+    border-bottom: 1px solid #ffffff;
+
+    div.thread-bit-wrap {
+      background: #e3e3e6;
+      padding: 10px;
+      cursor: pointer;
+
+      a:link, a:visited, :hover {
+        text-decoration: none;
+      }
+
+      input[type='checkbox'] {
+        -webkit-appearance:none;
+        width:20px;
+        height:20px;
+        background:white;
+        border-radius:5px;
+        border:2px solid #c6c6c7;
+        float: right;
+        position: relative;
+        right: 0px;
+        top: 0px;
+        margin: 0px 0px 0px 10px;
+      }
+
+      input[type='checkbox']:checked {
+        background: green;
+      }
+
+      div.thread-title {
+        color: #084b82;
+        font-size: 14px;
+      }
+      div.thread-summary {
+        color: #333333;
+        font-size: 12px;
+
+        div.thread-author, div.thread-stats {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) {
+  #threads-list {
+    div.thread-bit {
+      div.thread-bit-wrap {
+        div.thread-summary {
+          div.thread-stats {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//#threads-list {
+//  .box-body {
+//    margin: 0;
+//    padding: 0;
+//  }
+//
+//  .mod-input {
+//    float: right;
+//    position: relative;
+//    display: block;
+//    background: red;
+//    padding: 10px;
+//    vertical-align:middle;
+//  }
+//
+//  ul {
+//    margin: 0;
+//    padding: 0;
+//    list-style-type: none;
+//
+//    li {
+//      border-bottom: 1px solid #ffffff;
+//      a:link, a:visited, a:hover {
+//        display: block;
+//        padding: 5px 15px;
+//        text-decoration: none;
+//      }
+//
+//      input[type='checkbox'] {
+//        -webkit-appearance:none;
+//        width:25px;
+//        height:25px;
+//        background:white;
+//        border-radius:5px;
+//        border:2px solid #c6c6c7;
+//        float: right;
+//        position: relative;
+//        right: 15px;
+//        top: 5px;
+//      }
+//      input[type='checkbox']:checked {
+//        background: green;
+//      }
+//
+//      //label {
+//      //  width:98%;
+//      //  position:relative;
+//      //  //left: -20px;
+//      //  display:inline-block;
+//      //  vertical-align:middle;
+//      //}
+//      //
+//      .thread-title {
+//        font-size: 15px;
+//      }
+//
+//      .thread-author, .thread-stats {
+//        font-size: 12px;
+//        color: #333333;
+//      }
+//    }
+//  }
+//}
