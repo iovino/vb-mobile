@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+$navbar
+
+<if condition="$show['forumslist']">
+    <!-- sub-forumbits -->
+    <div id="forums-list">
+        <!-- parent forum -->
+        <div class="box-container">
+            <div class="box-head">Sub-Forums: $foruminfo[title]</div>
+            <div class="box-body">
+                $forumbits
+            </div>
+        </div>
+        <!-- parent forum -->
+    </div>
+    <!-- /sub-forumbits -->
+</if>
+
+<div class="buttons-bar">
+    <a id="mod-mode" href="" class="button icon-moderator pull-left" rel="nofollow">Mod Mode</a>
+    <if condition="$show['newthreadlink']"><a href="newthread.php?$session[sessionurl]do=newthread&amp;f=$foruminfo[forumid]" class="button icon-comment" rel="nofollow">New Thread</a></if>
+</div>
+<div class="clearfix"></div>
+
+<if condition="$show['threadslist']">
+
+    <form action="inlinemod.php?forumid=$forumid" method="post" id="inlinemodform">
+    <input type="hidden" name="url" value="$url" />
+    <input type="hidden" name="s" value="$session[sessionhash]" />
+    <input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+    <input type="hidden" name="forumid" value="$forumid" />
+
+    <!-- thread listings -->
+    <div class="box-container" id="threads-list">
+        <div class="box-head">
+            Threads in Forum : $foruminfo[title]
+        </div>
+        <div class="box-body">
+            <div class="mod-mode-message text-center">
+                Tap which threads you want to moderate then select an action from the menu below
+            </div>
+
+            $announcebits
+
+            <if condition="$show['threads']">
+                <if condition="$show['stickies']">
+                    $threadbits_sticky
+                    <div class="box-foot"></div>
+                </if>
+                $threadbits
+
+                <else />
+                <div class="no-post-message">There are no posts in this forum.</div>
+            </if>
+        </div>
+    </div>
+    <!-- /thread listings -->
+
+    <if condition="$show['inlinemod']">
+    <!-- mod tools -->
+    <div class="text-center" id="mod-tools">
+
+        <select name="do">
+            <if condition="$show['deletethread'] OR $show['spamctrls'] OR $show['openthread'] OR $show['approvethread'] OR $show['movethread'] OR $template_hook['inlinemod_thread_bottom']">
+                <optgroup label="$vbphrase[option]">
+                    <if condition="$show['deletethread']">
+                        <option value="deletethread">$vbphrase[delete_threads]</option>
+                        <option value="undeletethread">$vbphrase[undelete_threads]</option>
+                    </if>
+                    <if condition="$show['spamctrls']">
+                        <option value="spamthread">$vbphrase[delete_threads_as_spam]</option>
+                    </if>
+                    <if condition="$show['openthread']">
+                        <option value="open">$vbphrase[open_threads]</option>
+                        <option value="close">$vbphrase[close_threads]</option>
+                    </if>
+                    <if condition="$show['approvethread']">
+                        <option value="approvethread">$vbphrase[approve_threads]</option>
+                        <option value="unapprovethread">$vbphrase[unapprove_threads]</option>
+                    </if>
+                    <if condition="$show['movethread']">
+                        <option value="stick">$vbphrase[stick_threads]</option>
+                        <option value="unstick">$vbphrase[unstick_threads]</option>
+                        <option value="movethread">$vbphrase[move_threads]</option>
+                        <option value="mergethread">$vbphrase[merge_threads]</option>
+                    </if>
+                    $template_hook[inlinemod_thread_bottom]
+                </optgroup>
+            </if>
+            <optgroup label="____________________">
+                <option value="viewthread">$vbphrase[view_selected_threads]</option>
+                <option value="clearthread">$vbphrase[clear_thread_list]</option>
+            </optgroup>
+        </select>
+
+        <input type="submit" class="button" id="inlinego" value="$vbphrase[go]" />
+    </div>
+    <!-- /mod tools -->
+    </if>
+
+</form>
+</if>
+
+$pagenav
+
+
+$footer
+
+</body>
+</html>

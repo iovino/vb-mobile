@@ -1,0 +1,26 @@
+<!-- main content wrapper -->
+<div class="container">
+
+    <header id="header">
+        <div class="head-left">
+            <if condition="$bbuserinfo['userid']">
+                <a href="#menu-left">
+                    <span class="notifications">23</span>
+                </a>
+            <else />
+                <a class="register" href="register.php">r</a>
+            </if>
+        </div>
+        <div class="head-right">
+            <if condition="$bbuserinfo['userid']">
+                <a href="#menu-right"></a>
+            <else />
+                <a href="misc.php?do=mobile-login">Login</a>
+            </if>
+        </div>
+        <div class="head-center">
+            <a href="$vboptions[forumhome].php$session[sessionurl_q]">
+                &nbsp;
+            </a>
+        </div>
+    </header>

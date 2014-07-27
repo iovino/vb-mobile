@@ -1,0 +1,28 @@
+<div class="thread-bit thread-<if condition="$show['gotonewpost']">new<else />old</if>" id="thread-bit-$thread[threadid]">
+    <div class="thread-bit-wrap">
+        <a href="showthread.php?$session[sessionurl]t=$thread[threadid]$thread[highlight]" id="thread-$thread[threadid]" class="thread-link">
+            <div class="info">
+                <div class="thread-title">
+                    <if condition="$show['sticky']">
+                        <span class="tag tag-sticky"></span>
+                    </if>
+
+                    <if condition="$show['gotonewpost']">
+                        <strong>$thread[threadtitle]</strong>
+                    <else />
+                        $thread[threadtitle]
+                    </if>
+                </div>
+                <div class="thread-summary">
+                    <div class="thread-author">$thread[postusername] $thread[postdate]</div>
+                    <div class="thread-stats">Comments: $thread[replycount] | Views: $thread[views]</div>
+                </div>
+                <input id="mod-checkbox-$thread[threadid]" class="mod-checkbox" type="checkbox" name="tlist[]" value="$thread[threadid]"  />
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+

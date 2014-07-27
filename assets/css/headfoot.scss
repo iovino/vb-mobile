@@ -1,0 +1,141 @@
+// Header Content
+#header {
+  background: $header-bg-color;
+  height: 85px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  // left menu icon
+  div.head-left {
+    float: left;
+    position: relative;
+    top: 20px;
+    left: 20px;
+
+    a:link, a:visited, a:hover {
+      text-decoration: none;
+    }
+
+    a:link:before, a:visited:before, a:hover:before {
+      @include font-awesome("\f007", 28px, #ffffff);
+    }
+
+    .notifications {
+      @include notification-jewel(10px);
+      position: relative;
+      top: -15px;
+      right: 10px;
+    }
+  }
+
+  // site logo
+  div.head-center {
+    text-align: center;
+
+    a:link, a:visited, a:hover {
+      background: transparent url($logo-url-path) no-repeat;
+      background-size:$logo-width $logo-height;
+      background-repeat:no-repeat;
+      width: $logo-width;
+      height: $logo-height;
+      display: inline-block;
+      position: relative;
+      right:10px;
+    }
+  }
+
+  div.head-right {
+    float: right;
+    position: relative;
+    top: 20px;
+    right: 20px;
+
+    a:link, a:visited, a:hover {
+      text-decoration: none;
+    }
+
+    a:link:before, a:visited:before, a:hover:before {
+      @include font-awesome("\f0c9", 28px, #ffffff);
+    }
+  }
+
+}
+
+// Footer Content
+#footer {
+  background: $footer-bg-color;
+  color: $footer-font-color;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 11px;
+
+  a:link, a:visited, a:hover {
+    font-size: 14px;
+    font-weight: bold;
+    color: $footer-font-color;
+  }
+}
+
+// Search Box
+#search {
+  :before {
+    @include font-awesome("\f002", 20px, #9f9f9f);
+    position: absolute;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+
+  input.search-box {
+    background: $search-bg-color;
+    color: $search-font-color;
+
+    width: 100%;
+    height: 30px;
+
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $navbar-shadow-color;;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    //margin-bottom: 10px;
+
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+
+    box-shadow: 0px 1px 1px $navbar-shadow-color;
+    -webkit-box-shadow: 0px 1px 1px $navbar-shadow-color;
+    -moz-box-shadow: 0px 1px 1px $navbar-shadow-color;
+  }
+
+  input.search-box::-webkit-input-placeholder {
+    color: $search-font-color;
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  input.search-box:-moz-placeholder { /* Firefox 18- */
+    color: $search-font-color;
+  }
+
+  input.search-box::-moz-placeholder {  /* Firefox 19+ */
+    color: $search-font-color;
+  }
+
+  input.search-box:-ms-input-placeholder {
+    color: $search-font-color;
+  }
+}
+
+// adds bottom margin to search on select pages
+.search-margin {
+  margin-bottom: 10px;
+}

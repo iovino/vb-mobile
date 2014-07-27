@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+$navbar
+
+<form action="login.php?do=emailpassword" method="post">
+<input type="hidden" name="s" value="$session[sessionhash]" />
+<input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+<input type="hidden" name="do" value="emailpassword" />
+<input type="hidden" name="url" value="$url" />
+
+<div class="box-container">
+    <div class="box-head">
+        $vbphrase[lost_password_recovery_form]
+    </div>
+    <div class="box-body">
+        <div class="post-option">
+            <div class="post-option-label">
+                $vbphrase[forgotten_password_request_email]
+            </div>
+            <div class="post-field"><input placeholder="Enter your email address" type="text" class="bginput" name="email" size="35" maxlength="90" value="$email" dir="ltr" /></div>
+
+        </div>
+
+    </div>
+
+    <div class="box-foot text-center">
+        <input type="submit" class="button" value="$vbphrase[request_username_password_now]" accesskey="s" />
+    </div>
+</div>
+</form>
+
+
+$footer
+
+</body>
+</html>

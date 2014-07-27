@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+$navbar
+
+$poll
+
+
+<h3 class="text-center">$thread[title]</h3>
+
+<div class="buttons-bar">
+    <a id="mod-mode" href="" class="button icon-moderator pull-left" rel="nofollow">Mod Mode</a>
+    <if condition="$show['largereplybutton']"><a href="newreply.php?$session[sessionurl]do=newreply&amp;noquote=1&amp;p=$FIRSTPOSTID" class="button icon-comment" rel="nofollow">New Reply</a></if>
+</div>
+<div class="clearfix"></div>
+
+<!-- postbits -->
+$postbits
+<!-- /postbits -->
+
+$pagenav
+
+
+<if condition="$show['quickreply']">
+    <!-- quick reply -->
+    <form action="newreply.php?do=postreply&amp;t=$threadid" method="post" name="vbform" onsubmit="return qr_prepare_submit(this, $vboptions[postminchars]);" id="qrform">
+    <div class="quick-reply box-container">
+        <div class="box-head">Quick Reply</div>
+        <div class="box-body">
+            <textarea name="message" rows="10" cols="60" tabindex="1" dir="ltr"></textarea>
+        </div>
+        <div class="box-foot text-center">
+            <input type="hidden" name="fromquickreply" value="1" />
+            <input type="hidden" name="s" value="$session[sessionhash]" />
+            <input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+            <input type="hidden" name="do" value="postreply" />
+            <input type="hidden" name="t" value="$threadid" id="qr_threadid" />
+            <input type="hidden" name="p" value="$qrpostid" id="qr_postid" />
+            <input type="hidden" name="specifiedpost" value="0" id="qr_specifiedpost" />
+            <input type="hidden" name="parseurl" value="1" />
+            <input type="hidden" name="loggedinuser" value="$bbuserinfo[userid]" />
+            <input type="submit" class="button" value="$vbphrase[post_quick_reply]" accesskey="s" title="(Alt + S)" name="sbutton" tabindex="2" id="qr_submit" onclick="clickedelm = this.value" />
+            <input type="submit" class="button" value="$vbphrase[go_advanced]" accesskey="x" title="(Alt + X)" name="preview" tabindex="3" id="qr_preview" onclick="clickedelm = this.value" />
+        </div>
+    </div>
+    </form>
+    <!-- /quick reply -->
+</if>
+
+$footer
+
+</body>
+</html>

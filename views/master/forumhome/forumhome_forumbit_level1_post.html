@@ -1,0 +1,15 @@
+<!-- child-forum -->
+<div class="forum-bit status-$forum[statusicon]">
+    <div class="forum-bit-wrap">
+        <a href="forumdisplay.php?$session[sessionurl]f=$forum[forumid]">
+            <div class="info">
+                <div class="forum-title">$forum[title]</div>
+                <div class="forum-summary">$forum[description]</div>
+                <if condition="$show['forumsubscription']"><div class="smallfont"><strong><a href="subscription.php?$session[sessionurl]do=removesubscription&amp;f=$forum[forumid]" rel="nofollow">$vbphrase[unsubscribe_from_this_forum]</a></strong></div></if>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- /child-forum -->
+
+$childforumbits

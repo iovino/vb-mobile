@@ -1,0 +1,85 @@
+//
+// vBulletin 3 Mobile Site
+//
+
+// reusables boxes
+.box-container {
+  .box-head {
+    background: $box-one-head-bg-color;
+    color: $box-one-head-font-color;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+  }
+  .box-body {
+    background: $box-one-body-bg-color;
+    color: $box-one-body-font-color;
+    padding: 5px;
+    border-bottom:1px solid #c6c6c7;
+  }
+  .box-foot {
+    background: $box-one-foot-bg-color;
+    color: $box-one-foot-font-color;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+  }
+}
+
+// up arrow
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+}
+
+// right arrow
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid black;
+}
+
+// buttons
+.button, a:link.button, a:visited.button, a:hover.button {
+  background: $button-bg-color;
+  color: $button-text-color;
+  border-radius: 3px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 9px 9px 6px 9px;
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 0 0 $button-box-shadow;
+  -moz-box-shadow: 0 3px 0 0 $button-box-shadow;
+  -webkit-box-shadow: 0 3px 0 0 $button-box-shadow;
+  -o-box-shadow: 0 3px 0 0 $button-box-shadow;
+}
+
+// button icons
+a.icon-moderator:before {
+  @include font-awesome('\f0ad', '16px', $button-text-color);
+  padding-right: 5px;
+}
+
+// button icons
+a.icon-comment:before {
+  @include font-awesome('\f086', '16px', $button-text-color);
+  padding-right: 5px;
+}
+
+
+
+// control buttons
+.top-control-buttons {
+  margin: 15px;
+}
+
+

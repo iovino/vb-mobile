@@ -1,0 +1,61 @@
+// body
+$body-bg-color:   #ffffff;
+$body-font-color: #333333;
+$body-font-family: 'Open Sans', sans-serif;
+$body-link-color: #084b82;
+
+// main width
+$container-width: 100%;
+
+// logo
+$logo-url-path: '../imgs/logos/ct-logo.png';
+$logo-width: 123px;
+$logo-height: 63px;
+
+// header
+$header-bg-color: #354e6f;
+
+// navbar
+$navbar-bg-color: #ffffff;
+$navbar-shadow-color: #B9B9B9;
+$navbar-font-color: $body-font-color;
+$navbar-link-color: $body-link-color;
+$navbar-divider-color: #b9b9b9;
+
+// footer
+$footer-bg-color: $header-bg-color;
+$footer-font-color: #ffffff;
+
+// search
+$search-bg-color: #ffffff;
+$search-font-color: #9f9f9f;
+
+// content box container
+$box-one-head-bg-color: $header-bg-color;
+$box-one-head-font-color: #ffffff;
+$box-one-body-bg-color: #e3e3e6;
+$box-one-body-font-color: #333333;
+$box-one-foot-bg-color: $header-bg-color;
+$box-one-foot-font-color: #ffffff;
+
+// buttons
+$button-text-color: #ffffff;
+$button-bg-color: #5b7eac;
+$button-box-shadow: #4d698d;
+
+// forumhome
+$mark-unread-bg-color: #499551;
+$mark-read-bg-color: #9fc1a5;
+
+// forum display
+$mark-deleted-bg-color: #c81010;
+
+// showthread
+$post-footer-bg-color: $header-bg-color;
+$post-bg-color: #e3e3e6;
+$post-border-color: #c6c6c7;
+$post-text-color: #333333;
+$post-link-color: #428bca;
+
+// stat color
+$stats-text-color: #999;

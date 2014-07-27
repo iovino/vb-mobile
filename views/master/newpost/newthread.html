@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+$navbar
+
+$postpreview
+
+<form action="newthread.php?do=postthread&amp;f=$forumid" method="post" name="vbform"<if condition="!is_browser('webtv')"> onsubmit="return vB_Editor['$editorid'].prepare_submit(this.subject.value, $vboptions[postminchars])"</if>>
+<input type="hidden" name="s" value="$session[sessionhash]" />
+<input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+<input type="hidden" name="f" value="$forumid" />
+<input type="hidden" name="do" value="postthread" />
+<input type="hidden" name="posthash" value="$posthash" />
+<input type="hidden" name="poststarttime" value="$poststarttime" />
+<input type="hidden" name="loggedinuser" value="$bbuserinfo[userid]" />
+
+<div class="box-container">
+    <div class="box-head">
+        $vbphrase[post_new_thread]
+    </div>
+    <div class="box-body">
+        <div class="post-field"><input placeholder="Enter a thread title" type="text" class="bginput" name="subject" value="$subject" maxlength="$vboptions[titlemaxchars]" tabindex="1" title="$vbphrase[optional]" /></div>
+        <div class="post-field"><textarea placeholder="Enter your message" name="message" tabindex="1" dir="ltr">$newpost[message]</textarea></div>
+    </div>
+
+</div>
+
+<div class="box-container">
+    <div class="box-head">
+        Options
+    </div>
+    <div class="box-body">
+
+        <if condition="$show['misc_options']">
+            <div class="post-option">
+                <div class="post-option-title">Miscellaneous Options</div>
+                <if condition="$bbuserinfo['signature'] != ''"><div class="post-option-label"><label for="cb_signature"><input type="checkbox" name="signature" value="1" id="cb_signature" tabindex="1" $checked[signature] /> $vbphrase[show_your_signature]</label></div></if>
+                <if condition="$show['parseurl']"><div class="post-option-label"><label for="cb_parseurl"><input type="checkbox" name="parseurl" value="1" id="cb_parseurl" tabindex="1" $checked[parseurl] /> $vbphrase[automatically_parse_links_in_text]</label></div></if>
+                $disablesmiliesoption
+            </div>
+        </if>
+
+        <if condition="$show['member']">
+            <div class="post-option">
+                <div class="post-option-title">Email Notifications</div>
+                <select name="emailupdate" tabindex="1">
+                    <option value="9999" $emailchecked[9999]>$vbphrase[do_not_subscribe]</option>
+                    <option value="0" $emailchecked[0]>$vbphrase[no_email_notification]</option>
+                    <option value="1" $emailchecked[1]>$vbphrase[instant_email_notification]</option>
+                    <option value="2" $emailchecked[2]>$vbphrase[daily_email_notification]</option>
+                    <option value="3" $emailchecked[3]>$vbphrase[weekly_email_notification]</option>
+                </select>
+
+                <if condition="$show['subscribefolders']">
+                    Folder: <select name="folderid" tabindex="1">$folderbits</select>
+                </if>
+            </div>
+        </if>
+
+        <if condition="$show['threadrating']">
+            <div class="post-option">
+                <div class="post-option-title">Rate Thread</div>
+                <select name="rating" tabindex="1">
+                    <option value="0"$rate[0]>$vbphrase[choose_a_rating]</option>
+                    <optgroup label="&nbsp;">
+                        <option value="5"$rate[5]>5 : $vbphrase[excellent]</option>
+                        <option value="4"$rate[4]>4 : $vbphrase[good]</option>
+                        <option value="3"$rate[3]>3 : $vbphrase[average]</option>
+                        <option value="2"$rate[2]>2 : $vbphrase[bad]</option>
+                        <option value="1"$rate[1]>1 : $vbphrase[terrible]</option>
+                    </optgroup>
+                </select>
+            </div>
+        </if>
+
+        $threadmanagement
+    </div>
+
+    <div class="box-foot text-center">
+        <input type="submit" class="button" name="sbutton" id="{$editorid}_save" value="$vbphrase[submit_new_thread]" accesskey="s" tabindex="1" />
+        <input type="submit" class="button" name="preview" value="$vbphrase[preview_post]" accesskey="r" tabindex="1" />
+    </div>
+</div>
+
+
+
+
+</form>
+
+$footer
+
+</body>
+</html>

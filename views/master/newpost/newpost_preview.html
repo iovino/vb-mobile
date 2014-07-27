@@ -1,0 +1,15 @@
+<if condition="$show['errors']">
+    <div class="post-errors">
+        <strong>$vbphrase[errors_occured_when_submitted]:</strong>
+        <ol>$errorlist</ol>
+    </div>
+<else />
+    <div class="box-container">
+        <div class="box-head">
+            Post Preview
+        </div>
+        <div class="box-body">
+            $previewmessage
+        </div>
+    </div>
+</if>

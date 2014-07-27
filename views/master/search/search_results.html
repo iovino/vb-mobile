@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+
+<!-- search -->
+<div id="search" class="search-margin">
+    <form action="search.php?do=process" method="post">
+        <input type="hidden" name="do" value="process" />
+        <input type="hidden" name="quicksearch" value="1" />
+        <input type="hidden" name="childforums" value="1" />
+        <input type="hidden" name="exactname" value="1" />
+        <input type="hidden" name="s" value="$session[sessionhash]" />
+        <input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+        <input class="search-box" type="text" name="query" value="" placeholder="Search The Forums" />
+    </form>
+</div>
+<!-- /search -->
+
+<div class="buttons-bar">
+    <a id="mod-mode" href="" class="button icon-moderator" rel="nofollow">Mod Mode</a>
+    <if condition="$show['newthreadlink']"><a href="newthread.php?$session[sessionurl]do=newthread&amp;f=$foruminfo[forumid]" class="button icon-comment" rel="nofollow">New Thread</a></if>
+</div>
+
+<!-- search results -->
+<form action="inlinemod.php?forumid=$forumid" method="post" id="inlinemodform">
+    <input type="hidden" name="url" value="$url" />
+    <input type="hidden" name="s" value="$session[sessionhash]" />
+    <input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+    <input type="hidden" name="forumid" value="$forumid" />
+
+    <!-- thread listings -->
+    <div class="box-container" id="threads-list">
+        <div class="box-head">
+            <if condition="$displayWords">$vbphrase[key_words]: $displayWords</if>
+
+            <if condition="$displayUsers">
+                <if condition="$displayWords">; </if>
+                <if condition="$starteronly">$vbphrase[threads_started_by]<else />$vbphrase[posts_made_by]</if>: $displayUsers
+            </if>
+
+            <div style="font-weight: normal; font-size: 12px;"><phrase 1="$first" 2="$last" 3="$numitems">$vbphrase[showing_results_x_to_y_of_z]</phrase></div>
+        </div>
+        <div class="box-body">
+            <div class="mod-mode-message text-center">
+                Tap which threads you want to moderate then select an action from the menu below
+            </div>
+
+            $announcebits
+
+            <if condition="$show['results']">
+                $searchbits
+            <else />
+                <div class="no-post-message">$vbphrase[no_unread_threads]</div>
+            </if>
+        </div>
+        <div class="box-foot">
+            <if condition="$show['results']">
+                <if condition="$show['generated']">
+                    <phrase 1="$searchtime" 2="$searchminutes">$vbphrase[search_took_x_seconds_gen_y_mins]</phrase>
+                    <else />
+                    <phrase 1="$searchtime">$vbphrase[search_took_x_seconds]</phrase>
+                </if>
+            </if>
+
+        </div>
+    </div>
+    <!-- /thread listings -->
+
+    <if condition="$show['inlinemod']">
+        <!-- mod tools -->
+        <div class="text-center" id="mod-tools">
+
+            <select name="do">
+                <if condition="$show['deletethread'] OR $show['spamctrls'] OR $show['openthread'] OR $show['approvethread'] OR $show['movethread'] OR $template_hook['inlinemod_thread_bottom']">
+                    <optgroup label="$vbphrase[option]">
+                        <if condition="$show['deletethread']">
+                            <option value="deletethread">$vbphrase[delete_threads]</option>
+                            <option value="undeletethread">$vbphrase[undelete_threads]</option>
+                        </if>
+                        <if condition="$show['spamctrls']">
+                            <option value="spamthread">$vbphrase[delete_threads_as_spam]</option>
+                        </if>
+                        <if condition="$show['openthread']">
+                            <option value="open">$vbphrase[open_threads]</option>
+                            <option value="close">$vbphrase[close_threads]</option>
+                        </if>
+                        <if condition="$show['approvethread']">
+                            <option value="approvethread">$vbphrase[approve_threads]</option>
+                            <option value="unapprovethread">$vbphrase[unapprove_threads]</option>
+                        </if>
+                        <if condition="$show['movethread']">
+                            <option value="stick">$vbphrase[stick_threads]</option>
+                            <option value="unstick">$vbphrase[unstick_threads]</option>
+                            <option value="movethread">$vbphrase[move_threads]</option>
+                            <option value="mergethread">$vbphrase[merge_threads]</option>
+                        </if>
+                        $template_hook[inlinemod_thread_bottom]
+                    </optgroup>
+                </if>
+                <optgroup label="____________________">
+                    <option value="viewthread">$vbphrase[view_selected_threads]</option>
+                    <option value="clearthread">$vbphrase[clear_thread_list]</option>
+                </optgroup>
+            </select>
+
+            <input type="submit" class="button" id="inlinego" value="$vbphrase[go]" />
+        </div>
+        <!-- /mod tools -->
+    </if>
+</form>
+<!-- /search results -->
+
+$pagenav
+$footer
+</body>
+</html>

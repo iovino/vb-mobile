@@ -1,0 +1,112 @@
+<div class="post-bit">
+    <div class="post-head">
+        <div class="user-info">
+            <if condition="$show['avatar']">
+                <img class="user-avatar" src="$post[avatarurl]" alt="" width="50" height="50" />
+            <else />
+                <img class="user-avatar" src="mobile/assets/imgs/misc/no-avatar.jpg" alt="" width="50" height="50" />
+            </if>
+
+            <div class="user-name">$post[musername]</div>
+             <div class="user-title">$post[usertitle]</div>
+            <!--<div class="user-badge button">Administrator</div>-->
+        </div>
+
+        <div class="user-fields">
+            <div>Posts: $post[posts]</div>
+            <div>Joined: $post[joindate]</div>
+            <if condition="$post[field2]"><div>Location: $post[field2]</div></if>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="post-body">
+        <div class="post-dateline">
+
+            <if condition="!$show['announcement']">
+                Posted $post[postdate]<if condition="!$show['detailedtime']"> at $post[posttime]</if>
+            <else />
+                <phrase 1="$post[startdate]" 2="$post[enddate]">$vbphrase[x_until_y]</phrase>
+            </if>
+
+        </div>
+
+        <if condition="$show['reportlink']">
+        <div class="post-report">
+            <a href="report.php?$session[sessionurl]p=$post[postid]" rel="nofollow">Report Post</a>
+        </div>
+        </if>
+        <div class="clearfix"></div>
+
+        <div class="post-content">
+            <!--<div class="post-title">Work LIfe Family Balance Vacation Family QT Enthusiasm Outside interests</div>-->
+
+            $post[message]
+
+
+            <if condition="$show['attachments']">
+                <!-- attachments -->
+                <div style="margin: 15px 0px">
+
+                    <if condition="$show['thumbnailattachment']">
+                        <div><strong>Attached Thumbnails</strong></div>
+                        $post[thumbnailattachments]
+                    </if>
+
+
+                    <if condition="$show['imageattachment']">
+                        <div><strong>$vbphrase[attached_images]</strong></div>
+                        $post[imageattachments]
+                    </if>
+
+                    <if condition="$show['imageattachmentlink']">
+                        <div><strong>$vbphrase[attached_images]</strong></div>
+                        $post[imageattachmentlinks]
+                    </if>
+
+                    <if condition="$show['otherattachment']">
+                        <div><strong>$vbphrase[attached_files]</strong></div>
+                        $post[otherattachments]
+                    </if>
+
+                    <if condition="$show['moderatedattachment']">
+                        <fieldset class="fieldset">
+                            <div><strong>$vbphrase[attachments_pending_approval]</strong></div>
+                            $post[moderatedattachments]
+                        </fieldset>
+                    </if>
+
+                </div>
+                <!-- / attachments -->
+            </if>
+
+
+            <if condition="$show['postedited']">
+            <!-- edit note -->
+            <div class="post-edited">
+                <if condition="$show['postedithistory']">
+                    <phrase 1="$post[edit_username]" 2="$post[edit_date]" 3="$post[edit_time]" 4="posthistory.php?$session[sessionurl]p=$post[postid]">$vbphrase[last_edited_link_by_x_on_y_at_z_postid]</phrase>
+                    <else />
+                    <phrase 1="$post[edit_username]" 2="$post[edit_date]" 3="$post[edit_time]">$vbphrase[last_edited_by_x_on_y_at_z]</phrase>
+                </if>
+                <if condition="$post['edit_reason']">
+                    $vbphrase[reason]: $post[edit_reason]
+                </if>
+            </div>
+            <!-- /edit note -->
+            </if>
+        </div>
+
+        <i class="arrow-up"></i>
+    </div>
+
+    <div class="post-foot">
+        <if condition="$post['editlink']"><a href="$post[editlink]" rel="nofollow" class="button">Edit Post</a></if>
+        <if condition="$post['replylink']"><a href="$post[replylink]" rel="nofollow" class="button">Quote Post</a></if>
+
+
+
+
+        <a href="" class="button">1,712 Thanks</a>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+
+@mixin font-awesome($content, $size, $color) {
+  font-size: $size;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: $content;
+  color: $color;
+}
+
+@mixin notification-jewel($size) {
+  font-size: $size;
+  font-weight: bold;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .7);
+  background-color: #dc0d17;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#fa3c45), to(#dc0d17));
+  background-image: -webkit-linear-gradient(#fa3c45, #dc0d17);
+  color: #fff;
+  min-height: 13px;
+  padding: 1px 5px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+}
+
+@mixin my-account-icon() {
+  padding-right: 10px;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  vertical-align: -1px;
+}

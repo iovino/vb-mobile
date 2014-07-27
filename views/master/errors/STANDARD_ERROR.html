@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+$navbar
+
+<if condition="$show['permission_error']">
+
+    <script type="text/javascript" src="clientscript/vbulletin_md5.js?v=$vboptions[simpleversion]"></script>
+    <form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, $show[nopasswordempty])">
+    <input type="hidden" name="do" value="login" />
+    <input type="hidden" name="url" value="$scriptpath" />
+    <input type="hidden" name="vb_login_md5password" />
+    <input type="hidden" name="vb_login_md5password_utf" />
+    <div class="box-container">
+        <div class="box-head">Login</div>
+        <div class="box-body">
+            $postvars
+
+            <div class="post-option">
+                <div class="post-field">
+                    <input placeholder="Enter your username" type="text" class="bginput" name="vb_login_username" size="50" accesskey="u" tabindex="1" />
+                </div>
+
+                <div class="post-field">
+                    <input placeholder="Enter your password" type="password" class="bginput" name="vb_login_password" size="50" tabindex="1" />
+                </div>
+
+                <div class="post-option-label">
+
+                </div>
+
+                <div class="post-option-label">
+                    <div class="pull-left remember-user">
+                        <label for="cb_cookieuser">
+                            <input type="checkbox" name="cookieuser" value="1" id="cb_cookieuser" tabindex="1" /> <span>$vbphrase[remember_me]</span>
+                        </label>
+                    </div>
+                    <div class="pull-right forgot-password">
+                        <a href="login.php?$session[sessionurl]do=lostpw">$vbphrase[forgotten_your_password]</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="box-foot text-center">
+            <input type="submit" class="button" value="$vbphrase[log_in]" accesskey="s" tabindex="1" />
+            <input type="reset" class="button" value="$vbphrase[reset_fields]" accesskey="r" tabindex="1" />
+        </div>
+    </div>
+    </form>
+
+<else />
+
+    <div class="box-container">
+        <div class="box-head">Message</div>
+        <div class="box-body text-center">
+            $errormessage
+        </div>
+    </div>
+
+</if>
+
+$footer
+
+</body>
+</html>
+
+
+
+

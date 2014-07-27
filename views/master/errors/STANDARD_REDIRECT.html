@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+<br />
+
+
+<form action="$formfile" method="post" name="postvarform">
+<div class="box-container">
+    <div class="box-head">$vbphrase[redirecting]</div>
+    <div class="box-body">
+
+        <p><strong>$errormessage</strong></p>
+        <if condition="$postvars">
+            $postvars
+            <p id="click_here_p" class="smallfont">$vbphrase[click_the_following_button]</p>
+            <input type="submit" class="button" id="proceed_button" value="$vbphrase[proceed]" onclick="proceed_click()" accesskey="s" />
+            <else />
+            <p class="smallfont"><a href="$url">$vbphrase[click_if_browser_does_not_redirect]</a></p>
+            <div>&nbsp;</div>
+        </if>
+
+    </div>
+</div>
+</form>
+
+
+<if condition="$postvars">
+
+    <!-- redirect with POST -->
+
+    <script type="text/javascript">
+        <!--
+        fetch_object('click_here_p').style.display = 'none';
+
+        myvar = "";
+        timeout = 18;
+        timerID = 0;
+
+        function proceed_click()
+        {
+            clearTimeout(timerID);
+            return true;
+        }
+
+        function submit_form()
+        {
+            window.status = "Redirecting" + myvar;
+            myvar = myvar + " .";
+            timerID = setTimeout("submit_form();", 100);
+            if (timeout > 0)
+            {
+                timeout -= 1;
+            }
+            else
+            {
+                clearTimeout(timerID);
+                window.status = "";
+                document.forms.postvarform.submit();
+                fetch_object('proceed_button').disabled = true;
+            }
+        }
+
+        submit_form();
+        //-->
+    </script>
+
+    <!-- / redirect with POST -->
+
+    <else />
+
+    <noscript>
+        <meta http-equiv="Refresh" content="2; URL=$url" />
+    </noscript>
+
+    <script type="text/javascript">
+        <!--
+        function exec_refresh()
+        {
+            window.status = "$vbphrase[redirecting]" + myvar;
+            myvar = myvar + " .";
+            var timerID = setTimeout("exec_refresh();", 100);
+            if (timeout > 0)
+            {
+                timeout -= 1;
+            }
+            else
+            {
+                clearTimeout(timerID);
+                window.status = "";
+                window.location = "$js_url";
+            }
+        }
+
+        var myvar = "";
+        var timeout = 20;
+        exec_refresh();
+        //-->
+    </script>
+
+</if>
+
+
+$footer
+
+</body>
+</html>
+
+
+
+

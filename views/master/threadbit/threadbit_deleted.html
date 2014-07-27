@@ -1,0 +1,27 @@
+<div class="thread-bit thread-deleted" id="thread-bit-$thread[threadid]">
+    <div class="thread-bit-wrap">
+
+            <div class="info">
+                <div class="thread-title">
+                    <em>$thread[threadtitle]</em>
+                </div>
+                <div class="thread-summary">
+
+                    <div class="thread-author">
+                        <div>Thread deleted by $thread[del_username]</div>
+                        <if condition="$show['deletereason']"><div>$vbphrase[reason]: <em>$thread[del_reason]</em></div></if>
+                        <if condition="$show['viewthread']"><a href="showthread.php?$session[sessionurl]t=$thread[threadid]">$vbphrase[view]</a> &nbsp;</if>
+                        <if condition="$show['managethread']"><a href="postings.php?$session[sessionurl]do=editthread&amp;t=$thread[threadid]">$vbphrase[manage]</a></if>
+                    </div>
+                    <div class="thread-stats">
+                    </div>
+                </div>
+                <input id="mod-checkbox-$thread[threadid]" class="mod-checkbox" type="checkbox" name="tlist[]" value="$thread[threadid]"  />
+            </div>
+
+    </div>
+</div>
+
+
+
+

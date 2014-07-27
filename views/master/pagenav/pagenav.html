@@ -1,0 +1,13 @@
+<!-- pagination -->
+<div class="text-center" id="pagination">
+    <ul class="pagination">
+        <if condition="$show['first']"><li><a rel="start" href="$address$address2<if condition="$anchor">#$anchor</if>"><strong>&laquo;</strong></a></li></if>
+        <if condition="$show['prev']"><li><a rel="prev" href="$address$address2<if condition="$prevpage != 1">&amp;page=$prevpage</if><if condition="$anchor">#$anchor</if>">&lt;</a></li></if>
+        $pagenav
+        <if condition="$show['next']"><li><a rel="next" href="$address$address2&amp;page=$nextpage<if condition="$anchor">#$anchor</if>">&gt;</a></li></if>
+        <if condition="$show['last']"><li><a href="$address$address2&amp;page=$totalpages<if condition="$anchor">#$anchor</if>"><strong>&raquo;</strong></a></li></if>
+    </ul>
+</div>
+<!-- /pagination -->
+
+

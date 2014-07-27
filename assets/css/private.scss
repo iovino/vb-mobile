@@ -1,0 +1,21 @@
+#pm-list {
+  .box-body {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      .pm-checkbox {
+        float: right;
+        position: relative;
+        top:10px;
+        right:10px;
+      }
+    }
+  }
+}

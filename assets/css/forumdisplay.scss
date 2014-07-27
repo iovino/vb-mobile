@@ -1,0 +1,178 @@
+
+// top buttons bar (new thread, mod mode, etc)
+.buttons-bar {
+  text-align:right;
+  margin:0 10px 10px 10px;
+}
+
+// thread tags
+.tag {
+  display: inline-block;
+  text-decoration: none;
+  padding: 2px 6px;
+  border: 0;
+  outline: 0;
+}
+
+// announcement tag
+span.tag-announcement:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  content: "\f0a1";
+}
+
+span.tag-sticky:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  padding-left: 2px;
+  padding-right: 2px;
+  content: "\f08d";
+}
+
+// no posts found message
+.no-post-message {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+// hide the mod tools by default
+#mod-tools {
+  display: none;
+}
+
+// thread listings
+#threads-list {
+  border-bottom:1px solid #c6c6c7;
+  margin-bottom: 15px;
+
+  // remove default box padding
+  .box-body {
+    color: #333333;
+    padding: 0px;
+    border-bottom:none;
+  }
+
+  .thread-new {
+    background: $mark-unread-bg-color;
+  }
+
+  .thread-old {
+    background: $mark-read-bg-color;
+  }
+
+  .thread-deleted {
+    background: $mark-deleted-bg-color;
+  }
+
+  .thread-announcement {
+    background: $mark-unread-bg-color;
+  }
+
+  .mod-selected {
+    background: red;
+  }
+
+  div.thread-bit {
+    padding-left: 5px;
+    border-bottom: 1px solid #ffffff;
+    display: inline-block;
+    width: 100%;
+
+    div.thread-bit-wrap {
+      background: #e3e3e6;
+      padding: 10px;
+
+
+      a:link, a:visited, :hover {
+        text-decoration: none;
+        text-shadow: 1px 0px 0px #fff;
+      }
+
+      div.thread-icon {
+        float: left;
+        margin:0 8px 0 0;
+      }
+
+      div.thread-title {
+        font-size: 14px;
+      }
+
+      div.thread-summary {
+        color: $body-font-color;
+        font-size: 12px;
+
+        div.thread-author, div.thread-stats {
+          display: inline-block;
+        }
+
+        .thread-stats {
+          color: $stats-text-color;
+        }
+      }
+
+      .mod-checkbox {
+        display: none;
+      }
+    }
+  }
+
+  div.mod-mode-message, div.lastvisit-message {
+    background: #fffdb0;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    display: none;
+    text-shadow: 1px 0px 0px #fff;
+  }
+
+  div.lastvisit-message {
+    display: block;
+  }
+
+  div.mod-checkbox {
+    display: none;
+    background: red;
+    width: 2%;
+
+    input[type='checkbox'] {
+      -webkit-appearance:none;
+      width:20px;
+      height:20px;
+      background:white;
+      border-radius:5px;
+      border:2px solid #c6c6c7;
+      float: right;
+      position: relative;
+      right: 0px;
+      top: 0px;
+      margin: 0px 0px 0px 10px;
+    }
+
+    input[type='checkbox']:checked {
+      background: green;
+    }
+  }
+}
+
+@media only screen and (min-width: 1px) {
+  #threads-list {
+    div.thread-bit {
+      div.thread-bit-wrap {
+        div.thread-summary {
+          div.thread-stats {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
+    <link rel="shortcut icon" href="./mobile/assets/ico/favicon.ico">
+    $headinclude
+    <title><phrase 1="$vboptions[bbtitle]">$vbphrase[x_powered_by_vbulletin]</phrase></title>
+</head>
+<body>
+$header
+
+<!-- search -->
+<div id="search">
+    <form action="search.php?do=process" method="post">
+        <input type="hidden" name="do" value="process" />
+        <input type="hidden" name="quicksearch" value="1" />
+        <input type="hidden" name="childforums" value="1" />
+        <input type="hidden" name="exactname" value="1" />
+        <input type="hidden" name="s" value="$session[sessionhash]" />
+        <input type="hidden" name="securitytoken" value="$bbuserinfo[securitytoken]" />
+        <input class="search-box" type="text" name="query" value="" placeholder="Search The Forums" />
+    </form>
+</div>
+<!-- /search -->
+
+<!-- forumbits -->
+<div id="forums-list">
+    $forumbits
+</div>
+<!-- /forumbits -->
+
+<!-- forum status keys -->
+<div id="forums-status">
+    <div class="forum-status-new text-center">
+        <div>Forum Contains New Posts</div>
+        <div class="status-new-border"></div>
+    </div>
+    <div class="forum-status-old text-center">
+        <div>Forum Contains Old Posts</div>
+        <div class="status-old-border"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- forum status keys -->
+
+<!-- who's online -->
+<div class="box-container" id="whos-online">
+    <div class="box-head">
+        What's Going On?
+    </div>
+    <div class="box-body">
+        <p class="active-text">Currently Active Users: $totalonline (<phrase 1="$numberregistered" 2="$numberguest">$vbphrase[x_members_and_y_guests]</phrase>)</p>
+        <p class="stats-text">Threads: $totalthreads, Posts: $totalposts, Members: $numbermembers</p>
+        <p class="stats-text"><phrase 1="member.php?$session[sessionurl]u=$newuserid" 2="$newusername">$vbphrase[welcome_to_our_newest_member_x]</phrase></p>
+    </div>
+</div>
+<!-- /who's online -->
+
+$footer
+
+</body>
+</html>
