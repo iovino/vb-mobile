@@ -1,0 +1,10 @@
+A vBulletin 3 plugin that renders a mobile style when visiting the site on a smartphone or table device.
+
+## Screenshots
+
+![](https://raw.githubusercontent.com/iovino/vb-mobile/master/assets/imgs/screenshots/home.png "Dashboard")
+![](https://raw.githubusercontent.com/iovino/vb-mobile/master/assets/imgs/screenshots/user-controls.png "Dashboard")
+![](https://raw.githubusercontent.com/iovino/vb-mobile/master/assets/imgs/screenshots/thread-view.png "Dashboard")
+![](https://raw.githubusercontent.com/iovino/vb-mobile/master/assets/imgs/screenshots/mod-controls.png "Dashboard")
+![](https://raw.githubusercontent.com/iovino/vb-mobile/master/assets/imgs/screenshots/post-view.png "Dashboard")
+
